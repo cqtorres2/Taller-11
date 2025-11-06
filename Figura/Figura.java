@@ -1,29 +1,27 @@
 public abstract class Figura {
-    public abstract String CalcularArea();
-
-    public String MostrarArea() {
-        System.out.println("Area de la figura");
-        return MostrarArea();
-    };
+    public abstract void CalcularArea();
 }
 
 class circulo extends Figura {
     @Override
-    public String CalcularArea() {
+    public void CalcularArea() {
         System.out.println("Es el area de una esfera");
-        return CalcularArea();
     }
 }
 
 class rectangulo extends Figura {
     @Override
-    public String CalcularArea() {
+    public void CalcularArea() {
         System.out.println("El rectangulo tiene un area compuesta de 4 lados y 4 puntas");
-        return CalcularArea();
     }
+}
 
-    @Override
-    public String toString() {
-        return CalcularArea();
+class Main {
+    public static void main(String[] args) {
+        rectangulo cuadrado = new rectangulo();
+        circulo esfera = new circulo();
+        cuadrado.CalcularArea();
+        esfera.CalcularArea();
+
     }
 }

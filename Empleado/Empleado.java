@@ -1,29 +1,33 @@
 package Empleado;
 
 public abstract class Empleado {
-    public abstract String CalcularSalario();
-    public String MostrarDetalles(){
+    public abstract void CalcularSalario();
+
+    public void MostrarDetalles() {
         System.out.println(" Los detalles del empleado son: Julian, 23 años, salario 500$");
-       return MostrarDetalles(); 
     };
 }
 
 class Gerente extends Empleado {
     @Override
-    public String CalcularSalario() {
+    public void CalcularSalario() {
         System.out.println("El salario es bueno");
-        return CalcularSalario();
     }
 }
 
 class Vendedor extends Empleado {
     @Override
-    public String CalcularSalario() {
+    public void CalcularSalario() {
         System.out.println("El salario es malo");
-        return CalcularSalario();
-    }   
-    @Override
-    public String toString() {
-        return CalcularSalario();
     }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Vendedor vendedor = new Vendedor();
+        Gerente gerente = new Gerente();
+        vendedor.CalcularSalario();
+        gerente.CalcularSalario();
+    }
+
 }
