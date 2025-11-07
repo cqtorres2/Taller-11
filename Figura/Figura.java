@@ -1,6 +1,6 @@
 public abstract class Figura {
     public abstract void CalcularArea();
-}
+ }
 
 class circulo extends Figura {
     @Override
